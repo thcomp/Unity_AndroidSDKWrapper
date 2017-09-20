@@ -15,21 +15,11 @@ namespace android.graphics
             return new Bitmap(bitmapJO);
         }
 
-        public class Options
+        public class Options : BaseAndroidJavaObjectWrapper
         {
-            private AndroidJavaObject mAndroidJO;
-
             public Options()
             {
                 mAndroidJO = new AndroidJavaObject("android.graphics.BitmapFactory$Options");
-            }
-
-            public AndroidJavaObject AndroidJO
-            {
-                get
-                {
-                    return mAndroidJO;
-                }
             }
 
             public Bitmap InBitmap

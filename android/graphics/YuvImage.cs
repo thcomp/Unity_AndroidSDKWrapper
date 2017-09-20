@@ -4,10 +4,8 @@ using UnityEngine;
 
 namespace android.graphics
 {
-    public class YuvImage
+    public class YuvImage : BaseAndroidJavaObjectWrapper
     {
-        private AndroidJavaObject mAndroidJO;
-
         public YuvImage(byte[] yuv, int format, int width, int height, int[] strides)
         {
             mAndroidJO = new AndroidJavaObject("android.graphics.YuvImage", yuv, format, width, height, strides);
