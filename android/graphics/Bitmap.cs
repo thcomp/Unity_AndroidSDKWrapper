@@ -7,18 +7,8 @@ using UnityEngine;
 
 namespace android.graphics
 {
-    public class Bitmap
+    public class Bitmap : BaseAndroidJavaObjectWrapper
     {
-        private AndroidJavaObject mAndroidJO;
-
-        public AndroidJavaObject AndroidJO
-        {
-            get
-            {
-                return mAndroidJO;
-            }
-        }
-
         public Bitmap(AndroidJavaObject bitmapJO)
         {
             mAndroidJO = bitmapJO;
@@ -29,18 +19,8 @@ namespace android.graphics
             return mAndroidJO.Call<Boolean>("compress", format.AndroidJO, quality, stream.AndroidJO);
         }
 
-        public class Config
+        public class Config : BaseAndroidJavaObjectWrapper
         {
-            private AndroidJavaObject mAndroidJO;
-
-            public AndroidJavaObject AndroidJO
-            {
-                get
-                {
-                    return mAndroidJO;
-                }
-            }
-
             internal Config(AndroidJavaObject androidJO)
             {
                 mAndroidJO = androidJO;
@@ -64,18 +44,8 @@ namespace android.graphics
             public static readonly Config RGB_565 = new Config(new AndroidJavaClass("android.graphics.Bitmap$Config").GetStatic<AndroidJavaObject>("RGB_565"));
         }
 
-        public class CompressFormat
+        public class CompressFormat : BaseAndroidJavaObjectWrapper
         {
-            private AndroidJavaObject mAndroidJO;
-
-            public AndroidJavaObject AndroidJO
-            {
-                get
-                {
-                    return mAndroidJO;
-                }
-            }
-
             internal CompressFormat(AndroidJavaObject androidJO)
             {
                 mAndroidJO = androidJO;

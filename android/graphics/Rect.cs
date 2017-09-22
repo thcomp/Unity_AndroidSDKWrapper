@@ -3,18 +3,8 @@ using UnityEngine;
 
 namespace android.graphics
 {
-    public class Rect
+    public class Rect : BaseAndroidJavaObjectWrapper
     {
-        private AndroidJavaObject mAndroidJO;
-
-        public AndroidJavaObject AndroidJO
-        {
-            get
-            {
-                return mAndroidJO;
-            }
-        }
-
         public int Left
         {
             get
